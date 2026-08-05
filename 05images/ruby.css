@@ -1,0 +1,370 @@
+/* this is the start of my css */
+
+/* base body */
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #333333;
+    margin: 0;
+    background-color: #fdfaf5;
+}
+
+
+
+/* Header */
+header {
+    background-color: #A68863;
+    padding: 1rem 2vw;
+}
+
+header span {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #730202;
+}
+
+header p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1rem;
+    margin: .2rem 0 0 0;
+    color: #ffffff;
+}
+
+/* Navigation - horizontal flexbox with wayfinding */
+nav {
+    background-color: #82432E;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0 2vw;
+}
+
+
+
+nav a {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #57F2E3;
+    display: block;
+    padding: .9rem 1.5rem;
+    min-height: 48px;
+    box-sizing: border-box;
+}
+
+/* current page indicator (wayfinding) */
+nav li.active a {
+    background-color: #730202;
+    color: #ffffff;
+}
+
+
+
+nav a:hover {
+    background-color: #F20530;
+    color: #ffffff;
+}
+
+/* Main content */
+main {
+    padding: 1.5rem 2vw;
+}
+
+main h1 {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: #F20530;
+    margin-bottom: .5rem;
+}
+
+/* Home page hero image - floated right, scales with the page */
+main figure.hero-figure {
+    float: right;
+    width: 32%;
+    max-width: 320px;
+    margin: 0 0 1rem 1.5rem;
+}
+
+main figure.hero-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 4px solid #82432E;
+    border-radius: .6rem;
+}
+
+main figure.hero-figure figcaption {
+    font-family: "Fredoka", sans-serif;
+    font-size: .85rem;
+    color: #82432E;
+    text-align: center;
+    margin-top: .4rem;
+}
+
+/* everything from "Today's Hot Picks" onward drops below the hero image
+   instead of squeezing into the leftover space beside it */
+main figure.hero-figure~h2 {
+    clear: right;
+}
+
+
+
+
+main h2 {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #82432E;
+    margin-bottom: .3rem;
+}
+
+main h3 {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #730202;
+    margin-bottom: .3rem;
+}
+
+
+main p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333333;
+}
+
+
+
+main a {
+    color: #F20530;
+    font-weight: 500;
+}
+
+main a:hover {
+    color: #730202;
+    text-decoration: none;
+}
+
+/* Lists */
+
+main ol {
+    list-style-type: upper-roman;
+    background-color: #57F2E3;
+    padding: .6rem 1.2rem;
+    margin: .5rem 0 1rem 0;
+    border-radius: .6rem;
+    width: fit-content;
+}
+
+
+
+
+main ol li {
+    margin-bottom: .5rem;
+    line-height: 1.4;
+}
+
+/* hot picks box - each dish is a flex card: photo on top, name + description below */
+main ol.hot-picks {
+    list-style: none;
+    counter-reset: picks;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1.2rem;
+    width: auto;
+    border: 3px dashed #82432E;
+}
+
+main ol.hot-picks li {
+    counter-increment: picks;
+    flex: 1 1 220px;
+    max-width: 300px;
+    background-color: #fdfaf5;
+    border-radius: .6rem;
+    padding: .8rem;
+}
+
+/* recreate the upper-roman numbering (lost when list-style is removed for flex) */
+main ol.hot-picks li::before {
+    content: counter(picks, upper-roman) ".";
+    display: block;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 700;
+    color: #F20530;
+    margin-bottom: .3rem;
+}
+
+main ol.hot-picks figure {
+    margin: 0;
+}
+
+main ol.hot-picks img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 3px solid #82432E;
+    border-radius: .5rem;
+}
+
+main ol.hot-picks figcaption h3 {
+    margin: .6rem 0 .2rem 0;
+}
+
+main ol.hot-picks figcaption p {
+    font-size: .9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+main ul {
+    list-style-type: square;
+    padding: 0 0 0 1.5rem;
+    margin: .5rem 0 1rem 0;
+}
+
+main ul li {
+    margin-bottom: .5rem;
+    line-height: 1.4;
+}
+
+/* menu image gallery - same card treatment as the hot picks box, no numbering since it's unordered */
+main ul.menu-gallery {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1.2rem;
+    margin: .5rem 0 1.5rem 0;
+    background-color: #57F2E3;
+    border: 3px dashed #82432E;
+    border-radius: .6rem;
+}
+
+main ul.menu-gallery li {
+    flex: 1 1 200px;
+    max-width: 240px;
+    margin: 0;
+    background-color: #fdfaf5;
+    border-radius: .6rem;
+    padding: .8rem;
+}
+
+main ul.menu-gallery figure {
+    margin: 0;
+}
+
+main ul.menu-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 3px solid #82432E;
+    border-radius: .5rem;
+}
+
+main ul.menu-gallery figcaption h3 {
+    margin: .6rem 0 .2rem 0;
+}
+
+main ul.menu-gallery figcaption p {
+    font-size: .9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* photo gallery page - simple flexbox grid of photos, no list markers needed */
+main ul.photo-gallery {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    padding: 0;
+    margin: 1rem 0 1.5rem 0;
+}
+
+main ul.photo-gallery li {
+    flex: 1 1 220px;
+    max-width: 260px;
+    margin: 0;
+}
+
+main ul.photo-gallery figure {
+    margin: 0;
+}
+
+main ul.photo-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 4px solid #82432E;
+    border-radius: .6rem;
+}
+
+main ul.photo-gallery figcaption {
+    font-family: "Fredoka", sans-serif;
+    font-size: .85rem;
+    color: #82432E;
+    text-align: center;
+    margin-top: .4rem;
+}
+
+
+
+main dl {
+    margin: .5rem 0 1rem 0;
+}
+
+main dl dt {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    color: #F20530;
+    margin-top: .6rem;
+}
+
+main dl dd {
+    font-size: .9rem;
+    color: #82432E;
+    margin-left: 1.2rem;
+}
+
+
+
+/* Address */
+main address {
+    font-style: normal;
+    background-color: #A68863;
+    color: #ffffff;
+    width: fit-content;
+    padding: .8rem 1.2rem;
+    border: 3px solid #730202;
+    border-radius: 1rem;
+    line-height: 1.5;
+}
+
+
+
+main address a {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Footer - clear the floated hero image */
+footer {
+    clear: both;
+    background-color: #82432E;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: .8rem;
+}
