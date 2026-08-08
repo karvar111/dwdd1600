@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Karla Vargas">
+    <meta name="description"
+        content="Get in touch with Ruby's Route 66 — ask a question, plan a group visit, or send us your feedback.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby's Route 66: Contact Us</title>
+    <link rel="stylesheet" href="ruby.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- start the page header -->
+    <header>
+        <img src="images/logo.png" alt="Ruby's Route 66 Logo" width="90" height="90">
+        <div class="site-name">
+            <span>Ruby's Route 66</span>
+            <p>A Blast from the Past!</p>
+        </div>
+    </header>
+
+    <!-- start the page navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="jukebox.html">Jukebox</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li class="active"><a href="contact.html">Contact Us</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- start the main content of the page -->
+    <main>
+
+        <h1>Contact Us</h1>
+
+        <p>Got a question, planning a group visit, or just want to tell us how dreamlike your experience was?
+            Fill out the form below and we'll get back to you.</p>
+
+        <form method="get" action="thanks.html" class="myform">
+
+            <fieldset>
+                <legend>Your Information</legend>
+                <label>Full Name:
+                    <input type="text" name="fullname" required>
+                </label>
+                <label>Email:
+                    <input type="email" name="email" required>
+                </label>
+                <label>Phone Number:
+                    <input type="tel" name="phone" placeholder="123-456-7890">
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>How Can We Help</legend>
+                <label>Reason for Contact:
+                    <select name="reason" required>
+                        <option value="none">Please Select an Option</option>
+                        <option value="general">General Question</option>
+                        <option value="catering">Catering &amp; Events</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="pricing">Menu or Pricing Questions</option>
+                    </select>
+                </label>
+
+                <p>I'm interested in:</p>
+                <label><input type="checkbox" name="interest" value="mailing"> Joining the mailing list</label>
+                <label><input type="checkbox" name="interest" value="group"> Planning a group visit</label>
+                <label><input type="checkbox" name="interest" value="dietary"> Sharing a dietary restriction</label>
+                <label><input type="checkbox" name="interest" value="events"> Hearing about live music
+                    nights</label>
+                <label><input type="checkbox" name="interest" value="pricing"> Menu pricing details</label>
+                <label><input type="checkbox" name="interest" value="media"> Media Inquiries
+                    orders</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Preferred Contact Method</legend>
+                <label><input type="radio" name="contactmethod" value="email"> Email</label>
+                <label><input type="radio" name="contactmethod" value="phone"> Phone</label>
+                <label><input type="radio" name="contactmethod" value="either"> Either is fine</label>
+            </fieldset>
+
+            <label>Your Message:
+                <textarea name="comments" rows="6"></textarea>
+            </label>
+
+            <input type="submit" value="Send Message">
+
+        </form>
+
+    </main>
+
+    <!-- start the page footer -->
+    <footer>
+        <p>&copy; 2026 &bull; Karla Vargas &bull; Web Essentials</p>
+    </footer>
+
+</body>
+
+</html>
